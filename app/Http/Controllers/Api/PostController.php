@@ -15,13 +15,4 @@ class PostController extends Controller
             "data" => $posts
         ]);
     }
-
-    public function show(Post $post)
-    {
-        @dd($post);
-        return response()->json([
-            "success" => true,
-            "data" => $post
-        ]);
-    }
 }
