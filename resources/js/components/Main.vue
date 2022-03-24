@@ -1,8 +1,8 @@
 <template>
     <div>
         <ul>
-            <li v-for="(post,index) in posts" :key=index>
-
+            <li v-for="(post,index) in posts" :key="index">
+                {{post.content}}
             </li>
         </ul>
     </div>
@@ -17,7 +17,11 @@ export default {
         }
     },
     created(){
-
+        axios
+        .get("/api/posts")
+        .then((data)=>{    
+            this.posts = data.data.data;
+        })
     }
 }
 </script>

@@ -2001,7 +2001,13 @@ __webpack_require__.r(__webpack_exports__);
       posts: []
     };
   },
-  created: function created() {}
+  created: function created() {
+    var _this = this;
+
+    axios.get("/api/posts").then(function (data) {
+      _this.posts = data.data.data;
+    });
+  }
 });
 
 /***/ }),
@@ -2569,7 +2575,9 @@ var render = function () {
     _c(
       "ul",
       _vm._l(_vm.posts, function (post, index) {
-        return _c("li", { key: index })
+        return _c("li", { key: index }, [
+          _vm._v("\n            " + _vm._s(post.content) + "\n        "),
+        ])
       }),
       0
     ),
