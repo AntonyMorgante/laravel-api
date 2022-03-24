@@ -2,7 +2,8 @@
     <div>
         <ul>
             <li v-for="(post,index) in posts" :key="index">
-                {{post.content}}
+                <h3>{{post.title}}</h3>
+                <p>{{post.content}}</p>
             </li>
         </ul>
     </div>
@@ -19,9 +20,15 @@ export default {
     created(){
         axios
         .get("/api/posts")
-        .then((data)=>{    
-            this.posts = data.data.data;
+        .then((response)=>{    
+            this.posts = response.data.data;
         })
     }
 }
 </script>
+
+<style scoped>
+ul{
+    list-style-type: none;
+}
+</style>

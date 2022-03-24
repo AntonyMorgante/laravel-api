@@ -8,14 +8,14 @@ use App\Post;
 use App\Tag;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
-use App\Cathegory;
+use App\Category;
 
 class PostController extends Controller
 {
     protected $validation = [
         'title'=>'required|string|max:100',
         'content'=>'required',
-        'cathegory_id' => 'nullable|exists:cathegories,id',
+        'category_id' => 'nullable|exists:categories,id',
         "tags" => 'exists:tags,id',
         'image' => 'nullable|image|mimes:jpg,jpeg,png,bmp'
     ];
@@ -38,9 +38,9 @@ class PostController extends Controller
      */
     public function create()
     {
-        $cathegories = Cathegory::all();
+        $categories = category::all();
         $tags = Tag::all();
-        return view('admin.posts.create',compact('cathegories','tags'));
+        return view('admin.posts.create',compact('categories','tags'));
     }
 
     /**
@@ -101,9 +101,9 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        $cathegories = Cathegory::all();
+        $categories = category::all();
         $tags = Tag::all();
-        return view('admin.posts.edit',compact('post','cathegories','tags'));
+        return view('admin.posts.edit',compact('post','categories','tags'));
     }
 
     /**

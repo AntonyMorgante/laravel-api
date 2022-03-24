@@ -17,10 +17,10 @@
                 <label class="form-label" for="image">Image</label>
                 <input class="form-control" type="file" name="image" id="image">
             </div>
-            <select class="form-group" aria-label="Default select example" name="cathegory_id" id="cathegory_id">
-                @foreach ($cathegories as $cathegory)
-                    <option value="{{$cathegory->id}}" {{($cathegory->id == $post->cathegory_id)? 'selected' : ''}}>
-                        {{$cathegory->name}}
+            <select class="form-group" aria-label="Default select example" name="category_id" id="category_id">
+                @foreach ($categories as $category)
+                    <option value="{{$category->id}}" {{($category->id == $post->category_id)? 'selected' : ''}}>
+                        {{$category->name}}
                     </option>                    
                 @endforeach
             </select>

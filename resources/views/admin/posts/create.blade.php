@@ -16,10 +16,10 @@
                 <label for="formFile" class="form-label">Immagine</label>
                 <input class="form-control" type="file" name="image" id="formFile">
             </div>
-            <select class="form-group" aria-label="Default select example" name="cathegory_id" id="cathegory_id">
+            <select class="form-group" aria-label="Default select example" name="category_id" id="category_id">
                 <option selected>Seleziona la categoria</option>
-                @foreach ($cathegories as $cathegory)
-                    <option value="{{$cathegory->id}}">{{$cathegory->name}}</option>                    
+                @foreach ($categories as $category)
+                    <option value="{{$category->id}}">{{$category->name}}</option>                    
                 @endforeach
             </select>
             <div class="form-group" name="tags" id="tags">

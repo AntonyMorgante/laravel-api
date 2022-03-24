@@ -29,7 +29,7 @@
                             @endif
                         </td>
                         <td>{{$post->title}}</td>
-                        <td class="text-center">{{$post->cathegory->name}}</td>
+                        <td class="text-center">{{$post->category->name}}</td>
                         <td class="text-truncate px-4" style="max-width: 450px;">{{$post['content']}}</td>
                         <td class="text-center">
                             @foreach($post->tags as $tag)
